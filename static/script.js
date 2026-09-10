@@ -1,211 +1,409 @@
-const API_BASE = "https://api.pxsl.dev";
+function getRandomDiscordAvatar() {
 
+    return `https://cdn.discordapp.com/embed/avatars/${Math.floor(Math.random() * 5)}.png`;
 
-// FORMAT NUMBERS
-
-function formatNumber(number) {
-    if (number === null || number === undefined) {
-        return "—";
-    }
-
-    if (number >= 1000000) {
-        return `${(number / 1000000).toFixed(1)}M+`;
-    }
-
-    if (number >= 1000) {
-        return `${(number / 1000).toFixed(1)}K+`;
-    }
-
-    return number.toLocaleString();
 }
 
 
-// LOAD BOT STATS
+async function loadReviews() {
+
+    try {
+
+        const res =
+            await fetch("/reviews.json");
+
+
+        if (!res.ok) {
+
+            throw new Error(
+                "Failed to load reviews"
+            );
+
+        }
+
+
+        const reviews =
+            await res.json();
+
+
+        const track =
+            document.getElementById(
+                "reviewsRow"
+            );
+
+
+        if (!track) return;
+
+
+        function createCard(r) {
+
+            const card =
+                document.createElement("div");
+
+
+            card.className =
+                "review-card";
+
+
+            const stars =
+                "⭐".repeat(
+                    r.rating || 5
+                );
+
+
+            card.innerHTML = `
+
+                <img
+                    class="review-avatar"
+                    src="${getRandomDiscordAvatar()}"
+                    alt=""
+                >
+
+                <div class="review-body">
+
+                    <div class="review-name">
+
+                        ${r.name}
+
+                        <span class="review-stars">
+                            ${stars}
+                        </span>
+
+                    </div>
+
+                    <div class="review-quote">
+
+                        ${r.text}
+
+                    </div>
+
+                </div>
+
+            `;
+
+
+            return card;
+
+        }
+
+
+        /*
+         * Original reviews
+         */
+
+        reviews.forEach(
+            r => track.appendChild(
+                createCard(r)
+            )
+        );
+
+
+        /*
+         * Duplicate them for
+         * seamless looping.
+         */
+
+        reviews.forEach(
+            r => track.appendChild(
+                createCard(r)
+            )
+        );
+
+
+        const row =
+            document.getElementById(
+                "reviewsRow"
+            );
+
+
+        let scroll = 0;
+
+
+        let speed = 0.5;
+
+
+        let targetSpeed = 0.5;
+
+
+        function animate() {
+
+            speed +=
+                (targetSpeed - speed)
+                * 0.12;
+
+
+            scroll += speed;
+
+
+            if (
+                scroll >=
+                row.scrollWidth / 2
+            ) {
+
+                scroll = 0;
+
+            }
+
+
+            row.scrollLeft =
+                scroll;
+
+
+            requestAnimationFrame(
+                animate
+            );
+
+        }
+
+
+        setTimeout(
+            animate,
+            500
+        );
+
+
+        /*
+         * Hold click to speed up.
+         */
+
+        row.addEventListener(
+            "mousedown",
+            () => {
+
+                targetSpeed = 3;
+
+            }
+        );
+
+
+        window.addEventListener(
+            "mouseup",
+            () => {
+
+                targetSpeed = 0.5;
+
+            }
+        );
+
+
+        /*
+         * If they drag outside
+         * the window while holding.
+         */
+
+        window.addEventListener(
+            "mouseleave",
+            () => {
+
+                targetSpeed = 0.5;
+
+            }
+        );
+
+
+        /*
+         * Mobile support.
+         */
+
+        row.addEventListener(
+            "touchstart",
+            () => {
+
+                targetSpeed = 3;
+
+            },
+            {
+                passive: true
+            }
+        );
+
+
+        window.addEventListener(
+            "touchend",
+            () => {
+
+                targetSpeed = 0.5;
+
+            }
+        );
+
+
+        window.addEventListener(
+            "touchcancel",
+            () => {
+
+                targetSpeed = 0.5;
+
+            }
+        );
+
+    } catch (error) {
+
+        console.error(
+            "[REVIEWS] Failed to load reviews:",
+            error
+        );
+
+    }
+
+}
+
 
 async function loadStats() {
+
     try {
-        const response = await fetch(`${API_BASE}/stats.json`);
+
+        const response =
+            await fetch(
+                "https://api.pxsl.dev/stats.json"
+            );
+
 
         if (!response.ok) {
-            throw new Error("Failed to load stats");
-        }
 
-        const data = await response.json();
-
-        const serverCount = document.getElementById("server-count");
-        const userCount = document.getElementById("user-count");
-
-        if (serverCount) {
-            serverCount.textContent = formatNumber(
-                data.servers ?? data.server_count
+            throw new Error(
+                "Failed to load stats.json"
             );
+
         }
+
+
+        const stats =
+            await response.json();
+
+
+        const userCount =
+            document.getElementById(
+                "user-count"
+            );
+
+
+        const serverCount =
+            document.getElementById(
+                "server-count"
+            );
+
 
         if (userCount) {
-            userCount.textContent = formatNumber(
-                data.users ?? data.user_count
-            );
+
+            userCount.textContent =
+                Number(
+                    stats.users
+                ).toLocaleString();
+
+        }
+
+
+        if (serverCount) {
+
+            serverCount.textContent =
+                Number(
+                    stats.guilds
+                ).toLocaleString();
+
         }
 
     } catch (error) {
-        console.error("Could not load Crumb stats:", error);
+
+        console.error(
+            "[STATS] Failed to load statistics:",
+            error
+        );
+
+
+        const userCount =
+            document.getElementById(
+                "user-count"
+            );
+
+
+        const serverCount =
+            document.getElementById(
+                "server-count"
+            );
+
+
+        if (userCount) {
+
+            userCount.textContent = "-";
+
+        }
+
+
+        if (serverCount) {
+
+            serverCount.textContent = "-";
+
+        }
+
     }
+
 }
 
-
-// LOAD COMMAND COUNT
 
 async function loadCommandCount() {
+
     try {
-        const response = await fetch(`${API_BASE}/commands.json`);
+
+        const response =
+            await fetch(
+                "https://api.pxsl.dev/commands.json"
+            );
+
 
         if (!response.ok) {
-            throw new Error("Failed to load commands");
+
+            throw new Error(
+                "Failed to load command data"
+            );
+
         }
 
-        const data = await response.json();
 
-        const commandCount = document.getElementById("command-count");
+        const commands =
+            await response.json();
 
-        if (!commandCount) {
-            return;
+
+        const commandCount =
+            document.getElementById(
+                "command-count"
+            );
+
+
+        if (commandCount) {
+
+            commandCount.textContent =
+                commands.length.toLocaleString();
+
         }
-
-        let count = 0;
-
-        if (Array.isArray(data)) {
-            count = data.length;
-        } else if (Array.isArray(data.commands)) {
-            count = data.commands.length;
-        } else if (typeof data.count === "number") {
-            count = data.count;
-        }
-
-        commandCount.textContent = count
-            ? `${count}+`
-            : "—";
 
     } catch (error) {
-        console.error("Could not load Crumb commands:", error);
-    }
-}
+
+        console.error(
+            "[COMMANDS] Failed to load command data:",
+            error
+        );
 
 
-// REVIEWS
-
-const reviews = [
-    {
-        text: "Crumb makes managing a server so much easier.",
-        name: "Crumb Community",
-        server: "Discord Server"
-    },
-    {
-        text: "Simple tools, useful features and no unnecessary nonsense.",
-        name: "Server Owner",
-        server: "Discord Community"
-    },
-    {
-        text: "The security features are exactly what a growing server needs.",
-        name: "Community Manager",
-        server: "Discord Server"
-    }
-];
-
-let currentReview = 0;
+        const commandCount =
+            document.getElementById(
+                "command-count"
+            );
 
 
-function updateReview() {
-    const review = reviews[currentReview];
+        if (commandCount) {
 
-    const text = document.getElementById("review-text");
-    const name = document.getElementById("review-name");
-    const server = document.getElementById("review-server");
-    const avatar = document.getElementById("review-avatar");
+            commandCount.textContent = "-";
 
-    if (text) {
-        text.textContent = review.text;
-    }
-
-    if (name) {
-        name.textContent = review.name;
-    }
-
-    if (server) {
-        server.textContent = review.server;
-    }
-
-    if (avatar) {
-        avatar.textContent = review.name.charAt(0).toUpperCase();
-    }
-}
-
-
-function nextReview() {
-    currentReview++;
-
-    if (currentReview >= reviews.length) {
-        currentReview = 0;
-    }
-
-    updateReview();
-}
-
-
-function previousReview() {
-    currentReview--;
-
-    if (currentReview < 0) {
-        currentReview = reviews.length - 1;
-    }
-
-    updateReview();
-}
-
-
-const nextButton = document.querySelector(".review-next");
-const previousButton = document.querySelector(".review-prev");
-
-if (nextButton) {
-    nextButton.addEventListener("click", nextReview);
-}
-
-if (previousButton) {
-    previousButton.addEventListener("click", previousReview);
-}
-
-
-// SMOOTH SCROLL
-
-document.querySelectorAll('a[href^="#"]').forEach((link) => {
-
-    link.addEventListener("click", (event) => {
-
-        const targetId = link.getAttribute("href");
-
-        if (!targetId || targetId === "#") {
-            return;
         }
 
-        const target = document.querySelector(targetId);
+    }
 
-        if (!target) {
-            return;
-        }
+}
 
-        event.preventDefault();
-
-        target.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-
-    });
-
-});
-
-
-// INITIALISE
 
 loadStats();
+
 loadCommandCount();
-updateReview();
+
+loadReviews();
