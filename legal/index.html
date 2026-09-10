@@ -609,205 +609,470 @@
 
     </section>
 
-
-
-    <!-- =========================
-         PRIVACY POLICY
-         ========================= -->
-
-    <section class="legal-card">
-
-
-        <h2>
-            Privacy Policy
-        </h2>
-
-
-        <p class="last-updated">
-
-            Last Updated: 10th September 2026
-
-        </p>
-
-
-        <p>
-
-            Crumb respects your privacy.
-            This policy explains what data is stored,
-            how it is used, and how website analytics
-            are handled.
-
-        </p>
-
-
-
-        <h3>
-            What We Store
-        </h3>
-
-
-        <ul>
-
-            <li>
-                Discord server IDs
-            </li>
-
-            <li>
-                Discord user IDs where required for bot functionality
-            </li>
-
-            <li>
-                Discord channel IDs where required for configuration
-            </li>
-
-            <li>
-                Bot configuration and server settings
-            </li>
-
-            <li>
-                Moderation-related data such as warnings where applicable
-            </li>
-
-        </ul>
-
-
-        <p>
-
-            We do not intentionally collect personal information
-            such as real names, passwords, payment information,
-            or the contents of private messages.
-
-        </p>
-
-
-
-        <h3>
-            How Data Is Used
-        </h3>
-
-
-        <p>
-
-            Data is used only to provide and operate
-            Crumb's features, including moderation,
-            server configuration, utilities, reminders,
-            and other bot functionality.
-
-        </p>
-
-
-
-        <h3>
-            Website Analytics
-        </h3>
-
-
-        <p>
-
-            We use Google Analytics only if you give consent
-            through the analytics banner displayed on this website.
-
-        </p>
-
-
-        <p>
-
-            If you consent, Google Analytics may collect
-            information such as page views, session duration,
-            device type, browser type, and general usage patterns.
-
-        </p>
-
-
-        <p>
-
-            Google Analytics may use cookies and similar
-            technologies. This information is used to understand
-            website usage and improve the Crumb website.
-
-        </p>
-
-
-        <p>
-
-            If you decline analytics, Google Analytics will not
-            be enabled through this website.
-
-        </p>
-
-
-        <p>
-
-            You can change your analytics preference at any time
-            using the <strong>Analytics Settings</strong> button.
-
-        </p>
-
-
-        <p>
-
-            You can view Google's privacy policy here:
-
-            <a
-                href="https://policies.google.com/privacy"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Google Privacy Policy
-            </a>
-
-        </p>
-
-
-
-        <h3>
-            Data Sharing
-        </h3>
-
-
-        <p>
-
-            We do not sell, rent, or intentionally share your
-            stored bot data with third parties except where
-            required by law or where necessary to operate
-            third-party services used by Crumb.
-
-        </p>
-
-
-
-        <h3>
-            Data Removal
-        </h3>
-
-
-        <p>
-
-            You can request deletion of data associated with
-            your server or Discord account by contacting us
-            through the Crumb community server.
-
-        </p>
-
-
-        <ul>
-
-            <li>
-                Remove Crumb from your Discord server
-            </li>
-
-            <li>
-                Contact the developers through the community server
-            </li>
-
-            <li>
-                Use an available data-deletion command where provided
-            </li>
-
-        </ul>
-
-
-    </section>
+<!-- =========================
+     PRIVACY POLICY
+     ========================= -->
+<section class="legal-card">
+
+    <h2>
+        Privacy Policy
+    </h2>
+
+    <p class="last-updated">
+        Last Updated: 10th September 2026
+    </p>
+
+    <p>
+        Crumb is a Discord bot operated by Pxsl. This Privacy Policy
+        explains what information Crumb accesses, what information is
+        stored, why it is used, and how data is handled when you use
+        Crumb.
+    </p>
+
+    <p>
+        Crumb is designed to collect and store only the information
+        reasonably required for its features to function.
+    </p>
+
+
+    <h3>
+        Information We Store
+    </h3>
+
+    <p>
+        Depending on which Crumb features are enabled or used in a
+        server, Crumb may store the following information:
+    </p>
+
+    <ul>
+
+        <li>
+            Discord server (guild) IDs
+        </li>
+
+        <li>
+            Discord channel IDs
+        </li>
+
+        <li>
+            Discord role IDs
+        </li>
+
+        <li>
+            Discord message IDs where required for bot configuration
+        </li>
+
+        <li>
+            Discord user IDs where required for features such as
+            moderation, verification, security whitelists, reminders,
+            and giveaways
+        </li>
+
+        <li>
+            Server configuration and feature settings
+        </li>
+
+        <li>
+            Moderation warnings, including the warned user's Discord ID,
+            the moderator or bot responsible, the warning reason, and
+            timestamp
+        </li>
+
+        <li>
+            Reminder information, including the user's Discord ID,
+            server/channel IDs where applicable, the reminder message,
+            and the scheduled reminder time
+        </li>
+
+        <li>
+            Giveaway entry information, including the Discord IDs of
+            users who enter a giveaway
+        </li>
+
+        <li>
+            Verification information, including a temporary Discord
+            user ID, CAPTCHA answer, attempt count, and expiry time
+            while verification is in progress
+        </li>
+
+        <li>
+            Automod configuration, blocked words, and whitelist entries
+            for users, roles, and channels
+        </li>
+
+        <li>
+            Server configuration for join, leave, boost, logging,
+            security, verification, automod, honeypot, and other
+            enabled features
+        </li>
+
+    </ul>
+
+
+    <h3>
+        Server Backups
+    </h3>
+
+    <p>
+        If the server backup feature is enabled or a backup is created,
+        Crumb may store a JSON representation of parts of the server's
+        configuration.
+    </p>
+
+    <p>
+        Backups can contain information such as server IDs, server
+        names, channel IDs and settings, role IDs and settings,
+        permission configurations, and Discord user IDs where a
+        permission overwrite specifically applies to a member.
+    </p>
+
+    <p>
+        Server backups are stored as files on the system running Crumb.
+        They are not encrypted by Crumb. Automatic backups are subject
+        to the retention setting configured for that server, while
+        manually created backups may remain until they are deleted.
+    </p>
+
+
+    <h3>
+        Message Content
+    </h3>
+
+    <p>
+        Crumb may process Discord message content when required for
+        features such as automod, spam detection, link and invite
+        filtering, blocked-word filtering, and message logging.
+    </p>
+
+    <p>
+        Message content used by automod is processed to determine
+        whether a message violates the server's configured rules.
+        Messages detected by automod may also have their content
+        included in an automod log sent to the server's configured
+        logging channel.
+    </p>
+
+    <p>
+        Crumb does not intentionally maintain a general database of
+        all messages sent through Discord. Message content processed
+        for these features is not stored in Crumb's databases unless
+        another Crumb feature specifically stores information derived
+        from it.
+    </p>
+
+    <p>
+        Once information has been sent to a Discord channel, its
+        retention is controlled by Discord and the server's own
+        settings. Crumb does not control how long Discord retains
+        those messages.
+    </p>
+
+
+    <h3>
+        Temporary Data
+    </h3>
+
+    <p>
+        Some information is held temporarily in memory while Crumb is
+        performing a feature. This can include Discord member
+        information, message content, voice state information, audit
+        log information, and recent messages used for spam detection.
+    </p>
+
+    <p>
+        Temporary in-memory information is not intentionally written
+        to Crumb's databases unless a feature specifically requires it
+        to be stored.
+    </p>
+
+
+    <h3>
+        Verification Data
+    </h3>
+
+    <p>
+        When server verification is enabled, Crumb temporarily stores
+        the Discord user ID of a person completing verification along
+        with a generated CAPTCHA answer, the number of attempts, and
+        an expiry time.
+    </p>
+
+    <p>
+        CAPTCHA information is intended to expire after five minutes
+        and is removed when verification is completed or the CAPTCHA
+        is otherwise invalidated. CAPTCHA information may remain in
+        the database until Crumb next processes the relevant
+        verification record.
+    </p>
+
+
+    <h3>
+        How We Use Data
+    </h3>
+
+    <p>
+        Information handled by Crumb is used to provide and operate
+        the features requested by Discord server administrators and
+        users.
+    </p>
+
+    <ul>
+
+        <li>
+            Moderation and server management
+        </li>
+
+        <li>
+            Automod and security features
+        </li>
+
+        <li>
+            Server configuration
+        </li>
+
+        <li>
+            Verification
+        </li>
+
+        <li>
+            Reminders
+        </li>
+
+        <li>
+            Giveaways
+        </li>
+
+        <li>
+            Server backups
+        </li>
+
+        <li>
+            Server logging
+        </li>
+
+        <li>
+            Join, leave, and boost messages
+        </li>
+
+        <li>
+            Other functionality provided by Crumb
+        </li>
+
+    </ul>
+
+
+    <h3>
+        Information We Do Not Intentionally Request
+    </h3>
+
+    <p>
+        Crumb does not intentionally request or require information
+        such as passwords, payment card details, Discord account
+        passwords, or precise physical location information in order
+        to use the bot.
+    </p>
+
+    <p>
+        However, users and server administrators can enter their own
+        text into features such as reminders, warning reasons,
+        blocked-word lists, giveaway information, and message
+        configurations. Users should therefore avoid entering
+        unnecessary personal or sensitive information into those
+        fields.
+    </p>
+
+
+    <h3>
+        Data Retention
+    </h3>
+
+    <p>
+        Different types of data are retained for different periods
+        depending on the feature that created them.
+    </p>
+
+    <p>
+        For example, reminders are retained until they are cancelled,
+        cleared, or processed. Moderation warnings remain until they
+        are removed by an appropriate moderation action. Giveaway
+        entries may remain in Crumb's database after a giveaway has
+        ended or been cancelled. Server backups remain according to
+        the configured backup retention settings, while manually
+        created backups may remain until manually deleted.
+    </p>
+
+    <p>
+        Configuration data may remain while the relevant Crumb feature
+        is configured for a server. Disabling a feature does not
+        necessarily delete all previously stored configuration or
+        historical data associated with that feature.
+    </p>
+
+
+    <h3>
+        Data Sharing
+    </h3>
+
+    <p>
+        Crumb does not sell or rent stored bot data.
+    </p>
+
+    <p>
+        Information may be sent to Discord as part of normal bot
+        functionality. For example, moderation and automod logs may
+        be sent to channels configured by server administrators, and
+        giveaway winners may be publicly announced in the relevant
+        Discord server.
+    </p>
+
+    <p>
+        Discord operates its own services and privacy practices.
+        Information sent to Discord is subject to Discord's own
+        policies and systems.
+    </p>
+
+    <p>
+        Crumb may also use third-party services for parts of its
+        website, such as Google Analytics, as described below.
+    </p>
+
+
+    <h3>
+        Website Analytics
+    </h3>
+
+    <p>
+        The Crumb website uses Google Analytics to understand website
+        usage and improve the site. Google Analytics is optional and
+        is not loaded unless you explicitly accept analytics through
+        the consent banner.
+    </p>
+
+    <p>
+        If you accept analytics, Google Analytics may collect
+        information such as page views, approximate usage information,
+        browser and device information, and interactions with the
+        website. Google Analytics may use cookies and similar
+        technologies.
+    </p>
+
+    <p>
+        Your analytics preference is stored locally in your browser
+        using local storage. This preference is separate from data
+        stored by the Crumb Discord bot.
+    </p>
+
+    <p>
+        If you decline analytics, the Google Analytics script is not
+        loaded by the Crumb website.
+    </p>
+
+    <p>
+        You can change your analytics preference at any time using
+        the <strong>Analytics Settings</strong> button on this page.
+    </p>
+
+    <p>
+        You can read Google's privacy policy here:
+        <a
+            href="https://policies.google.com/privacy"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Google Privacy Policy
+        </a>
+    </p>
+
+
+    <h3>
+        Data Deletion
+    </h3>
+
+    <p>
+        Crumb does not currently provide a single command that
+        automatically deletes every piece of data associated with a
+        server or Discord user.
+    </p>
+
+    <p>
+        Where a feature provides its own deletion mechanism, users
+        or server administrators can use that mechanism. For example,
+        reminders can be cancelled or cleared, moderation warnings
+        can be removed individually, automod whitelist entries can be
+        removed, honeypot configuration can be removed, and server
+        backups can be deleted.
+    </p>
+
+    <p>
+        If you need assistance removing stored data that cannot be
+        deleted through an available command, you can contact the
+        developers through the Crumb community server.
+    </p>
+
+    <p>
+        Removing Crumb from a Discord server does not by itself
+        guarantee that all previously stored data is immediately
+        deleted. Stored data may need to be removed separately.
+    </p>
+
+
+    <h3>
+        Data Security
+    </h3>
+
+    <p>
+        Crumb stores persistent bot data in local databases and files
+        on the system running the bot. Reasonable measures are taken
+        to protect the systems running Crumb, but no method of
+        electronic storage can be guaranteed to be completely secure.
+    </p>
+
+    <p>
+        Crumb's server backup files are currently stored as JSON and
+        are not encrypted by the bot.
+    </p>
+
+
+    <h3>
+        Children's Privacy
+    </h3>
+
+    <p>
+        Crumb is a Discord bot and is not specifically directed at
+        collecting personal information from children. Crumb does not
+        intentionally request information such as real names,
+        addresses, or passwords from users.
+    </p>
+
+    <p>
+        Users should follow Discord's own age requirements and terms
+        when using Discord and Crumb.
+    </p>
+
+
+    <h3>
+        Changes To This Policy
+    </h3>
+
+    <p>
+        This Privacy Policy may be updated when Crumb's features,
+        data handling, or services change. The "Last Updated" date at
+        the top of this policy will be changed when material updates
+        are made.
+    </p>
+
+
+    <h3>
+        Contact
+    </h3>
+
+    <p>
+        If you have questions about this Privacy Policy or want to
+        request assistance with stored data, contact the Crumb
+        developers through the community server linked below.
+    </p>
+
+</section>
 
 
 
