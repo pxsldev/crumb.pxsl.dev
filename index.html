@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Crumb — Powerful Discord Server Management</title>
+
+    <meta
+        name="description"
+        content="Crumb is a powerful Discord bot built to keep your server secure, organised and under control."
+    >
+
+    <meta property="og:title" content="Crumb — Powerful Discord Server Management">
+    <meta
+        property="og:description"
+        content="Keep your Discord server secure, organised and under control with Crumb."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://crumb.pxsl.dev/">
+    <meta property="og:image" content="https://crumb.pxsl.dev/assets/crumb.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Crumb — Powerful Discord Server Management">
+    <meta
+        name="twitter:description"
+        content="Powerful moderation, security and server management for Discord."
+    >
+    <meta name="twitter:image" content="https://crumb.pxsl.dev/assets/crumb.png">
+
+    <link rel="canonical" href="https://crumb.pxsl.dev/">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="/" class="brand">
+                <img src="/assets/crumb.png" alt="Crumb">
+                <span>Crumb</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#commands">Commands</a>
+                <a href="#open-source">Open Source</a>
+                <a href="#community">Community</a>
+            </nav>
+
+            <a
+                href="https://discord.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=8&integration_type=0&scope=bot+applications.commands"
+                class="nav-button"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Add to Discord
+            </a>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="trusted-badge">
+                    <span class="status-dot"></span>
+                    Built for better Discord servers
+                </div>
+
+                <h1>
+                    Keep your server
+                    <span>under control.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Crumb is a powerful Discord bot built to protect,
+                    manage and organise your server without getting in
+                    the way.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="https://discord.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=8&integration_type=0&scope=bot+applications.commands"
+                        class="button button-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Add to Discord
+                        <span>→</span>
+                    </a>
+
+                    <a href="#commands" class="button button-secondary">
+                        Explore Commands
+                        <span>↓</span>
+                    </a>
+
+                </div>
+
+                <div class="stats">
+
+                    <div class="stat">
+                        <strong id="server-count">—</strong>
+                        <span>Servers</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong id="user-count">—</strong>
+                        <span>Users</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong id="command-count">—</strong>
+                        <span>Commands</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DISCORD PREVIEW -->
+
+            <div class="discord-preview">
+
+                <div class="discord-window">
+
+                    <div class="discord-sidebar">
+
+                        <div class="discord-server-icon">
+                            <img src="/assets/crumb.png" alt="Crumb">
+                        </div>
+
+                        <div class="discord-sidebar-divider"></div>
+
+                        <div class="discord-server-icon small">
+                            +
+                        </div>
+
+                    </div>
+
+
+                    <div class="discord-main">
+
+                        <div class="discord-topbar">
+                            <span>#</span>
+                            <strong>general</strong>
+                            <span class="discord-topic">
+                                Server security & management
+                            </span>
+                        </div>
+
+
+                        <div class="discord-messages">
+
+                            <div class="discord-message">
+
+                                <div class="message-avatar">
+                                    <img src="/assets/crumb.png" alt="Crumb">
+                                </div>
+
+                                <div class="message-content">
+
+                                    <div class="message-header">
+                                        <strong>Crumb</strong>
+                                        <span class="bot-tag">BOT</span>
+                                        <time>Today at 10:42</time>
+                                    </div>
+
+                                    <div class="security-alert">
+
+                                        <div class="alert-icon">
+                                            !
+                                        </div>
+
+                                        <div>
+                                            <strong>Security Alert</strong>
+                                            <p>
+                                                Suspicious activity was detected
+                                                and automatically handled.
+                                            </p>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="discord-message">
+
+                                <div class="message-avatar user-avatar">
+                                    <span>U</span>
+                                </div>
+
+                                <div class="message-content">
+
+                                    <div class="message-header">
+                                        <strong>Server Owner</strong>
+                                        <time>Today at 10:43</time>
+                                    </div>
+
+                                    <p>
+                                        nice, thanks crumb
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FEATURES -->
+
+        <section class="section" id="features">
+
+            <div class="section-heading">
+
+                <div class="section-label">
+                    WHAT CRUMB DOES
+                </div>
+
+                <h2>
+                    Everything your server
+                    <span>needs to stay healthy.</span>
+                </h2>
+
+                <p>
+                    From everyday moderation to serious server protection,
+                    Crumb gives you the tools to keep things running smoothly.
+                </p>
+
+            </div>
+
+
+            <div class="feature-grid">
+
+                <article class="feature-card featured">
+
+                    <div class="feature-icon">
+                        🛡️
+                    </div>
+
+                    <h3>Server Security</h3>
+
+                    <p>
+                        Protect your server against raids, nukes,
+                        suspicious activity and other threats.
+                    </p>
+
+                    <div class="feature-tag">
+                        Protection
+                    </div>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        ⚙️
+                    </div>
+
+                    <h3>Automod</h3>
+
+                    <p>
+                        Automatically handle spam, unwanted content
+                        and other rule-breaking behaviour.
+                    </p>
+
+                    <div class="feature-tag">
+                        Moderation
+                    </div>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        🚨
+                    </div>
+
+                    <h3>Anti-Raid</h3>
+
+                    <p>
+                        Detect suspicious joining patterns and react
+                        before a raid gets out of hand.
+                    </p>
+
+                    <div class="feature-tag">
+                        Security
+                    </div>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        💥
+                    </div>
+
+                    <h3>Anti-Nuke</h3>
+
+                    <p>
+                        Protect your server from destructive actions
+                        caused by compromised accounts or bots.
+                    </p>
+
+                    <div class="feature-tag">
+                        Security
+                    </div>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        💾
+                    </div>
+
+                    <h3>Server Backups</h3>
+
+                    <p>
+                        Keep important server configuration safe so
+                        you can recover when something goes wrong.
+                    </p>
+
+                    <div class="feature-tag">
+                        Management
+                    </div>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        📊
+                    </div>
+
+                    <h3>Server Monitoring</h3>
+
+                    <p>
+                        Keep an eye on your server with useful stats
+                        and automatically updated information.
+                    </p>
+
+                    <div class="feature-tag">
+                        Monitoring
+                    </div>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        🎫
+                    </div>
+
+                    <h3>Tickets</h3>
+
+                    <p>
+                        Give your members a clean way to contact
+                        your moderation team privately.
+                    </p>
+
+                    <div class="feature-tag">
+                        Support
+                    </div>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        🟠
+                    </div>
+
+                    <h3>Always Free</h3>
+
+                    <p>
+                        Core Crumb features stay completely free.
+                        No annoying feature paywalls.
+                    </p>
+
+                    <div class="feature-tag">
+                        Free forever
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECURITY -->
+
+        <section class="security-section">
+
+            <div class="security-content">
+
+                <div class="section-label">
+                    SERVER PROTECTION
+                </div>
+
+                <h2>
+                    Your server shouldn't
+                    <span>fall apart overnight.</span>
+                </h2>
+
+                <p>
+                    Crumb is designed to give server owners another
+                    layer of protection against the things that can
+                    turn a good server into a disaster.
+                </p>
+
+
+                <div class="security-list">
+
+                    <div class="security-item">
+                        <div class="check">✓</div>
+                        <div>
+                            <strong>Anti-nuke protection</strong>
+                            <span>
+                                React to dangerous server actions automatically.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="security-item">
+                        <div class="check">✓</div>
+                        <div>
+                            <strong>Anti-raid systems</strong>
+                            <span>
+                                Detect suspicious joining behaviour.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="security-item">
+                        <div class="check">✓</div>
+                        <div>
+                            <strong>Automated moderation</strong>
+                            <span>
+                                Handle common problems without manual work.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="security-item">
+                        <div class="check">✓</div>
+                        <div>
+                            <strong>Useful server statistics</strong>
+                            <span>
+                                See what is happening across your server.
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="security-visual">
+
+                <div class="security-card">
+
+                    <div class="security-card-header">
+                        <div class="security-status">
+                            <span></span>
+                            Protection active
+                        </div>
+
+                        <span>CRUMB</span>
+                    </div>
+
+
+                    <div class="security-score">
+
+                        <div class="score-ring">
+                            <strong>SAFE</strong>
+                        </div>
+
+                        <div>
+                            <span>Server status</span>
+                            <strong>Protected</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="security-events">
+
+                        <div>
+                            <span class="event-dot"></span>
+                            Anti-nuke
+                            <strong>Active</strong>
+                        </div>
+
+                        <div>
+                            <span class="event-dot"></span>
+                            Anti-raid
+                            <strong>Active</strong>
+                        </div>
+
+                        <div>
+                            <span class="event-dot"></span>
+                            Automod
+                            <strong>Active</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- COMMANDS -->
+
+        <section class="section commands-section" id="commands">
+
+            <div class="section-heading">
+
+                <div class="section-label">
+                    COMMANDS
+                </div>
+
+                <h2>
+                    Powerful tools.
+                    <span>Simple commands.</span>
+                </h2>
+
+                <p>
+                    Crumb keeps its commands organised so you can
+                    find exactly what you need without digging through
+                    a giant list.
+                </p>
+
+            </div>
+
+
+            <div class="commands-preview">
+
+                <div class="command-row">
+
+                    <div class="command-name">
+                        <span>/</span> serverinfo
+                    </div>
+
+                    <p>
+                        View detailed information about your server.
+                    </p>
+
+                    <span class="command-category">
+                        Utility
+                    </span>
+
+                </div>
+
+
+                <div class="command-row">
+
+                    <div class="command-name">
+                        <span>/</span> serverstats
+                    </div>
+
+                    <p>
+                        View live server statistics.
+                    </p>
+
+                    <span class="command-category">
+                        Utility
+                    </span>
+
+                </div>
+
+
+                <div class="command-row">
+
+                    <div class="command-name">
+                        <span>/</span> automod
+                    </div>
+
+                    <p>
+                        Configure automated moderation.
+                    </p>
+
+                    <span class="command-category">
+                        Moderation
+                    </span>
+
+                </div>
+
+
+                <div class="command-row">
+
+                    <div class="command-name">
+                        <span>/</span> ticket
+                    </div>
+
+                    <p>
+                        Create and manage support tickets.
+                    </p>
+
+                    <span class="command-category">
+                        Support
+                    </span>
+
+                </div>
+
+
+                <div class="command-row">
+
+                    <div class="command-name">
+                        <span>/</span> backup
+                    </div>
+
+                    <p>
+                        Manage your server backups.
+                    </p>
+
+                    <span class="command-category">
+                        Management
+                    </span>
+
+                </div>
+
+
+                <a href="#" class="view-commands">
+                    View all commands →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- OPEN SOURCE -->
+
+        <section class="open-source-section" id="open-source">
+
+            <div class="open-source-content">
+
+                <div class="github-icon">
+                    ◉
+                </div>
+
+                <div>
+
+                    <div class="section-label">
+                        OPEN SOURCE
+                    </div>
+
+                    <h2>
+                        Built in the open.
+                    </h2>
+
+                    <p>
+                        Crumb's source code is available on GitHub.
+                        See how it works, report issues and contribute
+                        to the project.
+                    </p>
+
+                    <a
+                        href="https://github.com/pxsldev/Crumb/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="button button-secondary"
+                    >
+                        View on GitHub
+                        <span>↗</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- REVIEWS -->
+
+        <section class="section reviews-section" id="community">
+
+            <div class="section-heading">
+
+                <div class="section-label">
+                    THE COMMUNITY
+                </div>
+
+                <h2>
+                    Built for people who
+                    <span>actually run servers.</span>
+                </h2>
+
+                <p>
+                    Crumb is made to be useful without making server
+                    management feel like a second job.
+                </p>
+
+            </div>
+
+
+            <div class="reviews-container">
+
+                <button
+                    class="review-arrow review-prev"
+                    aria-label="Previous review"
+                >
+                    ←
+                </button>
+
+
+                <div class="review-card">
+
+                    <div class="review-stars">
+                        ★★★★★
+                    </div>
+
+                    <p id="review-text">
+                        Crumb makes managing a server so much easier.
+                    </p>
+
+                    <div class="review-author">
+
+                        <div class="review-avatar" id="review-avatar">
+                            C
+                        </div>
+
+                        <div>
+                            <strong id="review-name">
+                                Crumb Community
+                            </strong>
+
+                            <span id="review-server">
+                                Discord Server
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="review-arrow review-next"
+                    aria-label="Next review"
+                >
+                    →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+
+        <section class="cta-section">
+
+            <div class="cta-card">
+
+                <div class="cta-glow"></div>
+
+                <div class="section-label">
+                    READY TO GET STARTED?
+                </div>
+
+                <h2>
+                    Give your server
+                    <span>a little Crumb.</span>
+                </h2>
+
+                <p>
+                    Powerful server management without the unnecessary
+                    complexity.
+                </p>
+
+                <a
+                    href="https://discord.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=8&integration_type=0&scope=bot+applications.commands"
+                    class="button button-primary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Add Crumb to Discord
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <a href="/" class="brand">
+                    <img src="/assets/crumb.png" alt="Crumb">
+                    <span>Crumb</span>
+                </a>
+
+                <p>
+                    Server management, without the headache.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <div>
+                    <strong>Crumb</strong>
+
+                    <a href="#features">Features</a>
+                    <a href="#commands">Commands</a>
+                    <a href="#community">Community</a>
+                </div>
+
+
+                <div>
+                    <strong>Resources</strong>
+
+                    <a href="https://github.com/pxsldev/Crumb/" target="_blank">
+                        GitHub
+                    </a>
+
+                    <a href="/legal">
+                        Legal
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Crumb
+            </span>
+
+            <span>
+                Built with 🧡 for Discord.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
