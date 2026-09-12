@@ -255,7 +255,7 @@ async function loadStats() {
 
         const response =
             await fetch(
-                "https://api.pxsl.dev/stats.json"
+                "https://api.pxsl.dev/crumb/stats.json"
             );
 
 
@@ -347,7 +347,7 @@ async function loadCommandCount() {
 
         const response =
             await fetch(
-                "https://api.pxsl.dev/commands.json"
+                "https://api.pxsl.dev/crumb/commands.json"
             );
 
 
