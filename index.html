@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,6 +27,7 @@
 
     <link rel="stylesheet" href="/static/styles.css">
 
+
     <!-- Open Graph -->
 
     <meta property="og:type" content="website">
@@ -33,6 +35,7 @@
     <meta property="og:description" content="A free Discord utility bot for moderation, server management, tickets and more.">
     <meta property="og:url" content="https://crumb.pxsl.dev/">
     <meta property="og:image" content="https://crumb.pxsl.dev/static/preview.png">
+
 
     <!-- Twitter -->
 
@@ -42,6 +45,7 @@
     <meta name="twitter:image" content="https://crumb.pxsl.dev/static/preview.png">
 
     <meta name="theme-color" content="#f28c28">
+
 
     <!-- Schema -->
 
@@ -65,15 +69,275 @@
     }
     </script>
 
-    
+
     <link rel="stylesheet" href="/static/analytics.css">
     <script src="/static/analytics.js" defer></script>
 
+
+    <!-- Support Popup -->
+
+    <style>
+        .support-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 99998;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.72);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .support-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .support-modal {
+            position: relative;
+            width: min(500px, 100%);
+            padding: 28px;
+            background: linear-gradient(
+                145deg,
+                rgba(45, 31, 20, 0.98),
+                rgba(24, 20, 17, 0.98)
+            );
+            border: 1px solid rgba(242, 140, 40, 0.4);
+            border-radius: 22px;
+            box-shadow:
+                0 30px 100px rgba(0, 0, 0, 0.65),
+                0 0 60px rgba(242, 140, 40, 0.12);
+            transform: translateY(20px) scale(0.97);
+            transition: transform 0.4s cubic-bezier(.16, 1, .3, 1);
+        }
+
+        .support-overlay.show .support-modal {
+            transform: translateY(0) scale(1);
+        }
+
+        .support-close {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 32px;
+            height: 32px;
+            border: 0;
+            border-radius: 9px;
+            background: rgba(255, 255, 255, 0.06);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 19px;
+            line-height: 1;
+            cursor: pointer;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .support-close:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+        }
+
+        .support-icon {
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 14px;
+            background: rgba(242, 140, 40, 0.14);
+            border: 1px solid rgba(242, 140, 40, 0.3);
+            border-radius: 14px;
+            font-size: 25px;
+            box-shadow: 0 0 25px rgba(242, 140, 40, 0.08);
+        }
+
+        .support-modal h2 {
+            margin: 0 40px 8px 0;
+            color: #fff;
+            font-size: clamp(24px, 5vw, 30px);
+            font-weight: 900;
+            letter-spacing: -0.5px;
+        }
+
+        .support-modal h2 span {
+            color: #f28c28;
+        }
+
+        .support-modal > p {
+            margin: 0 0 16px;
+            color: rgba(255, 255, 255, 0.68);
+            font-size: 14px;
+            line-height: 1.55;
+        }
+
+        .support-reasons {
+            display: grid;
+            gap: 7px;
+            margin-bottom: 17px;
+        }
+
+        .support-reason {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 10px 12px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 11px;
+        }
+
+        .support-reason span {
+            font-size: 16px;
+        }
+
+        .support-reason p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 12.5px;
+            line-height: 1.4;
+        }
+
+        .support-reason strong {
+            color: #fff;
+        }
+
+        .support-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 13px 18px;
+            border-radius: 11px;
+            background: #f28c28;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 800;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(242, 140, 40, 0.25);
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .support-button:hover {
+            transform: translateY(-2px);
+            background: #ff9d3f;
+            box-shadow: 0 12px 30px rgba(242, 140, 40, 0.35);
+        }
+
+        .support-secondary {
+            margin: 9px 0 0;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 10px;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .support-modal {
+                padding: 24px 20px;
+                border-radius: 19px;
+            }
+
+            .support-modal h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+
 </head>
+
 
 <body>
 
 <div class="background"></div>
+
+
+<!-- Support Popup -->
+
+<div id="supportOverlay" class="support-overlay">
+
+    <div class="support-modal">
+
+        <button
+            id="supportClose"
+            class="support-close"
+            type="button"
+            aria-label="Close"
+        >
+            ×
+        </button>
+
+        <div class="support-icon">
+            💜
+        </div>
+
+        <h2>
+            Help keep <span>Crumb</span> free.
+        </h2>
+
+        <p>
+            Crumb is completely free, with no premium walls,
+            locked commands, or subscriptions. If Crumb has
+            helped your server, you can support me directly
+            and help keep the bot running, maintained, and growing.
+        </p>
+
+        <div class="support-reasons">
+
+            <div class="support-reason">
+                <span>💰</span>
+
+                <p>
+                    <strong>Support me directly</strong><br>
+                    Your support helps cover hosting, APIs and
+                    the costs of keeping Crumb online and improving it.
+                </p>
+            </div>
+
+            <div class="support-reason">
+                <span>🚀</span>
+
+                <p>
+                    <strong>Boost the community</strong><br>
+                    Boost the Crumb Discord server to support the
+                    community and get access to server perks.
+                </p>
+            </div>
+
+            <div class="support-reason">
+                <span>🆓</span>
+
+                <p>
+                    <strong>Keep it free</strong><br>
+                    Supporting Crumb helps me keep its features
+                    available to everyone without paywalls.
+                </p>
+            </div>
+
+        </div>
+
+        <a
+            class="support-button"
+            href="https://pxsl.dev/thanks/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            💜 Support Crumb &amp; Pxsl →
+        </a>
+
+        <p class="support-secondary">
+            Every bit of support genuinely helps. Thank you ❤️
+        </p>
+
+    </div>
+
+</div>
 
 
 <nav>
@@ -184,7 +448,6 @@
 
         </div>
 
-
         <div class="message">
 
             <img src="/assets/crumb.png">
@@ -196,7 +459,6 @@
 
         </div>
 
-
         <div class="message">
 
             <img src="/assets/crumb.png">
@@ -207,7 +469,6 @@
             </div>
 
         </div>
-
 
         <div class="message">
 
@@ -230,7 +491,6 @@
     <h2>
         Everything your server needs
     </h2>
-
 
     <div class="grid">
 
@@ -382,7 +642,6 @@
         Loved by communities
     </h2>
 
-
     <div class="reviews-row-wrap">
 
         <div
@@ -404,6 +663,47 @@
 </footer>
 
 
+<script>
+    const supportOverlay =
+        document.getElementById("supportOverlay");
+
+    const supportClose =
+        document.getElementById("supportClose");
+
+
+    function showSupportPopup() {
+        supportOverlay.classList.add("show");
+    }
+
+
+    function hideSupportPopup() {
+        supportOverlay.classList.remove("show");
+    }
+
+
+    supportClose.addEventListener(
+        "click",
+        hideSupportPopup
+    );
+
+
+    supportOverlay.addEventListener(
+        "click",
+        (event) => {
+            if (event.target === supportOverlay) {
+                hideSupportPopup();
+            }
+        }
+    );
+
+
+    setTimeout(
+        showSupportPopup,
+        500
+    );
+</script>
+
+
 <script
     src="/static/script.js"
     defer
@@ -411,4 +711,5 @@
 
 
 </body>
+
 </html>
