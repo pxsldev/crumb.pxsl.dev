@@ -7,7 +7,7 @@
         {
             "component": {
                 "type": 17,
-                "accent_color": 15961128,
+                    "accent_color": 8151913,
                 "components": [
                     {
                         "type": 9,
@@ -20,7 +20,7 @@
                         "accessory": {
                             "type": 11,
                             "media": {
-                                "url": "https://crumb.pxsl.dev/assets/crumb.png"
+                                "url": "https://crumb.pxsl.dev/assets/halloween-profile.png"
                             }
                         }
                     },
@@ -87,7 +87,7 @@
 
     <link
         rel="icon"
-        href="/assets/crumb.png"
+        href="../assets/halloween-profile.png"
     >
 
     <link
@@ -97,7 +97,7 @@
 
     <link
         rel="stylesheet"
-        href="/static/styles.css"
+        href="../static/styles.css"
     >
 
 
@@ -130,7 +130,7 @@
 
     <meta
         name="theme-color"
-        content="#ff9d2e"
+        content="#7c3aed"
     >
 
 
@@ -174,11 +174,11 @@
 
             border-radius: 999px;
 
-            background: rgba(255, 157, 46, .12);
+            background: rgba(124, 58, 237, .12);
 
-            border: 1px solid rgba(255, 157, 46, .3);
+            border: 1px solid rgba(124, 58, 237, .3);
 
-            color: #ffb35c;
+            color: var(--purple-light);
 
             margin-bottom: 25px;
         }
@@ -197,8 +197,8 @@
 
             background: linear-gradient(
                 90deg,
-                #ff8c1a,
-                #ffc266
+                #7c3aed,
+                #c4b5fd
             );
 
             background-clip: text;
@@ -224,8 +224,8 @@
 
             background: linear-gradient(
                 145deg,
-                #1b1712,
-                #0f0d0a
+                #160e24,
+                #0c0816
             );
 
             border: 1px solid rgba(255,255,255,.08);
@@ -242,7 +242,7 @@
 
         .legal-card:hover {
 
-            border-color: rgba(255,157,46,.45);
+            border-color: rgba(124,58,237,.45);
 
             transform: translateY(-4px);
         }
@@ -264,7 +264,7 @@
 
             margin-bottom: 10px;
 
-            color: #ff9d2e;
+            color: var(--purple-light);
         }
 
 
@@ -289,7 +289,7 @@
 
         .legal-card a {
 
-            color: #ff9d2e;
+            color: var(--purple-light);
 
             text-decoration: none;
         }
@@ -329,7 +329,7 @@
 
             z-index: 99999;
 
-            background: rgba(20, 16, 11, .97);
+            background: rgba(20, 14, 30, .97);
 
             border: 1px solid rgba(255,255,255,.12);
 
@@ -337,7 +337,7 @@
 
             box-shadow:
                 0 20px 60px rgba(0,0,0,.45),
-                0 0 40px rgba(255,157,46,.08);
+                0 0 40px rgba(124,58,237,.08);
 
             backdrop-filter: blur(20px);
 
@@ -407,7 +407,7 @@
 
         .analytics-content a {
 
-            color: #ff9d2e;
+            color: var(--purple-light);
 
             text-decoration: none;
         }
@@ -457,15 +457,15 @@
 
         .analytics-accept {
 
-            background: #ff9d2e;
+            background: var(--purple);
 
-            color: #17100a;
+            color: #f5f0ff;
         }
 
 
         .analytics-accept:hover {
 
-            background: #ffae4d;
+            background: var(--purple-light);
         }
 
 
@@ -500,7 +500,7 @@
 
             border: 1px solid rgba(255,255,255,.1);
 
-            background: rgba(20,16,11,.85);
+            background: rgba(20,14,30,.85);
 
             color: #aaa;
 
@@ -528,7 +528,7 @@
 
             color: white;
 
-            background: rgba(255,157,46,.2);
+            background: rgba(124,58,237,.2);
         }
 
 
@@ -582,8 +582,8 @@
     </style>
 
     
-    <link rel="stylesheet" href="/static/styles.css">
-    <script src="/static/analytics.js" defer></script>
+    <link rel="stylesheet" href="../static/styles.css">
+    <script src="../static/analytics.js" defer></script>
 
 </head>
 
@@ -598,7 +598,7 @@
 
 <nav>
 
-    <a class="logo" href="/">
+    <a class="logo" href=".">
 
         Cr<span>umb</span>
 
@@ -607,17 +607,17 @@
 
     <div class="nav-links">
 
-        <a href="/">
+        <a href="../">
             Home
         </a>
 
 
-        <a href="/commands/">
+        <a href="../commands/">
             Commands
         </a>
 
 
-        <a href="/legal/">
+        <a href="../legal/">
             Legal
         </a>
 
@@ -1315,7 +1315,7 @@
             Analytics is optional and won't be enabled unless
             you accept.
 
-            <a href="/legal/">
+            <a href="../legal/">
                 Learn more
             </a>
 

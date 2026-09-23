@@ -10,7 +10,7 @@ async function loadReviews() {
     try {
 
         const res =
-            await fetch("/reviews.json");
+            await fetch("reviews.json");
 
 
         if (!res.ok) {

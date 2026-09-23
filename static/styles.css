@@ -1,12 +1,17 @@
 :root {
 
-    --bg: #100b07;
-    --card: #1b120c;
-    --card-hover: #25170e;
+    --bg: #0a0612;
+    --card: #140e1e;
+    --card-hover: #1c1428;
 
     --orange: #f28c28;
     --orange-light: #ffad55;
     --cream: #ffd6a3;
+
+    --purple: #7c3aed;
+    --purple-light: #a78bfa;
+    --pumpkin: #f97316;
+    --blood: #dc2626;
 
     --text: #fff7ef;
     --muted: #b9a99d;
@@ -57,19 +62,19 @@ body {
 
     radial-gradient(
         circle at 15% 15%,
-        rgba(242,140,40,0.30),
+        rgba(124,58,237,0.30),
         transparent 35%
     ),
 
     radial-gradient(
         circle at 85% 40%,
-        rgba(255,174,85,0.13),
+        rgba(249,115,22,0.15),
         transparent 30%
     ),
 
     radial-gradient(
         circle at 50% 90%,
-        rgba(242,140,40,0.13),
+        rgba(124,58,237,0.13),
         transparent 35%
     );
 
@@ -112,7 +117,7 @@ nav {
 
 .logo span {
 
-    color: var(--orange);
+    color: var(--purple);
 
 }
 
@@ -176,12 +181,12 @@ nav {
     border-radius: 999px;
 
     background:
-        rgba(242,140,40,.12);
+        rgba(124,58,237,.12);
 
     border:
-        1px solid rgba(242,140,40,.35);
+        1px solid rgba(124,58,237,.35);
 
-    color: var(--cream);
+    color: var(--purple-light);
 
     font-size: 14px;
 
@@ -210,8 +215,8 @@ nav {
     background:
         linear-gradient(
             90deg,
-            #f28c28,
-            #ffd09a
+            #7c3aed,
+            #c4b5fd
         );
 
     -webkit-background-clip: text;
@@ -268,12 +273,12 @@ nav {
 
 .primary {
 
-    background: var(--orange);
+    background: var(--purple);
 
-    color: #241106;
+    color: #f5f0ff;
 
     box-shadow:
-        0 20px 60px rgba(242,140,40,.32);
+        0 20px 60px rgba(124,58,237,.32);
 
 }
 
@@ -282,7 +287,7 @@ nav {
 
     transform: translateY(-4px);
 
-    background: var(--orange-light);
+    background: var(--purple-light);
 
 }
 
@@ -350,8 +355,8 @@ nav {
     background:
         linear-gradient(
             145deg,
-            #21150d,
-            #100c09
+            #160e24,
+            #0c0816
         );
 
     border:
@@ -492,8 +497,8 @@ nav {
     background:
         linear-gradient(
             145deg,
-            #21150d,
-            #100c09
+            #160e24,
+            #0c0816
         );
 
     border:
@@ -511,7 +516,7 @@ nav {
     background: var(--card-hover);
 
     border-color:
-        rgba(242,140,40,.5);
+        rgba(124,58,237,.5);
 
     box-shadow:
         0 20px 60px rgba(0,0,0,.4);
@@ -658,12 +663,12 @@ nav {
     background:
         linear-gradient(
             145deg,
-            rgba(242,140,40,.12),
-            rgba(255,196,130,.04)
+            rgba(124,58,237,.12),
+            rgba(167,139,250,.04)
         );
 
     border:
-        1px solid rgba(242,140,40,.25);
+        1px solid rgba(124,58,237,.25);
 
     box-shadow:
         0 30px 80px rgba(0,0,0,.35);
@@ -678,7 +683,7 @@ nav {
     transform: translateY(-6px);
 
     border-color:
-        rgba(242,140,40,.55);
+        rgba(124,58,237,.55);
 
     box-shadow:
         0 35px 90px rgba(0,0,0,.5);
@@ -732,7 +737,7 @@ nav {
 
     letter-spacing: 2px;
 
-    color: var(--orange-light);
+    color: var(--purple-light);
 
 }
 
@@ -755,8 +760,8 @@ nav {
     background:
         linear-gradient(
             90deg,
-            #f28c28,
-            #ffd09a
+            #7c3aed,
+            #c4b5fd
         );
 
     -webkit-background-clip: text;
@@ -939,12 +944,12 @@ footer {
     padding: 8px 14px;
     margin-bottom: 20px;
 
-    border: 1px solid rgba(255, 145, 0, 0.25);
+    border: 1px solid rgba(124, 58, 237, 0.25);
     border-radius: 999px;
 
-    background: rgba(255, 145, 0, 0.08);
+    background: rgba(124, 58, 237, 0.08);
 
-    color: #ff9d2e;
+    color: var(--purple-light);
 
     font-size: 13px;
     font-weight: 600;
@@ -964,7 +969,7 @@ footer {
 
 
 .commands-hero h1 span {
-    color: #ff9d2e;
+    color: var(--purple-light);
 }
 
 
@@ -1016,7 +1021,7 @@ footer {
 
     margin-bottom: 4px;
 
-    color: #ff9d2e;
+    color: var(--purple-light);
 
     font-size: 25px;
     font-weight: 800;
@@ -1057,10 +1062,10 @@ footer {
 .search-box:focus-within {
     background: rgba(255, 255, 255, 0.06);
 
-    border-color: rgba(255, 157, 46, 0.5);
+    border-color: rgba(124, 58, 237, 0.5);
 
     box-shadow:
-        0 0 0 3px rgba(255, 157, 46, 0.08);
+        0 0 0 3px rgba(124, 58, 237, 0.08);
 }
 
 
@@ -1145,7 +1150,7 @@ footer {
 
     background: rgba(255, 255, 255, 0.055);
 
-    border-color: rgba(255, 157, 46, 0.3);
+    border-color: rgba(124, 58, 237, 0.3);
 
     box-shadow:
         0 12px 35px rgba(0, 0, 0, 0.2);
@@ -1167,9 +1172,9 @@ footer {
 
     border-radius: 7px;
 
-    background: rgba(255, 157, 46, 0.1);
+    background: rgba(124, 58, 237, 0.1);
 
-    color: #ff9d2e;
+    color: var(--purple-light);
 
     font-family: monospace;
     font-size: 14px;
@@ -1354,18 +1359,18 @@ footer {
     background:
         linear-gradient(
             145deg,
-            #21150d,
-            #100c09
+            #160e24,
+            #0c0816
         );
 
     border:
-        1px solid rgba(255, 157, 46, 0.22);
+        1px solid rgba(124, 58, 237, 0.22);
 
     border-radius: 20px;
 
     box-shadow:
         0 25px 70px rgba(0, 0, 0, 0.55),
-        0 0 40px rgba(242, 140, 40, 0.08);
+        0 0 40px rgba(124, 58, 237, 0.08);
 
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -1467,26 +1472,26 @@ footer {
 /* YES */
 
 #analytics-yes {
-    background: var(--orange);
+    background: var(--purple);
 
     border:
-        1px solid var(--orange);
+        1px solid var(--purple);
 
-    color: #241106;
+    color: #f5f0ff;
 
     box-shadow:
-        0 10px 30px rgba(242, 140, 40, 0.22);
+        0 10px 30px rgba(124, 58, 237, 0.22);
 }
 
 #analytics-yes:hover {
     transform: translateY(-2px);
 
-    background: var(--orange-light);
+    background: var(--purple-light);
 
-    border-color: var(--orange-light);
+    border-color: var(--purple-light);
 
     box-shadow:
-        0 14px 35px rgba(242, 140, 40, 0.30);
+        0 14px 35px rgba(124, 58, 237, 0.30);
 }
 
 /* ENTRY ANIMATION */
