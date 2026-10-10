@@ -1,772 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <script id="discord:component-embed" type="application/json">
-        {
-            "component": {
-                "type": 17,
-                "accent_color": 15961128,
-                "components": [
-                    {
-                        "type": 9,
-                        "components": [
-                            {
-                                "type": 10,
-                                "content": "# **[Crumb](https://crumb.pxsl.dev/)**\nThe Discord bot that keeps your server going.\n\n🛡️ Moderation • ⚙️ Server Tools • 🎫 Tickets • 📊 Statistics"
-                            }
-                        ],
-                        "accessory": {
-                            "type": 11,
-                            "media": {
-                                "url": "https://crumb.pxsl.dev/assets/crumb.png"
-                            }
-                        }
-                    },
-                    {
-                        "type": 14,
-                        "spacing": 1
-                    },
-                    {
-                        "type": 10,
-                        "content": "## **100% free • Always**\nNo premium walls. No locked commands. Just Crumb."
-                    },
-                    {
-                        "type": 1,
-                        "components": [
-                            {
-                                "type": 2,
-                                "style": 5,
-                                "url": "https://crumb.pxsl.dev/",
-                                "label": "Visit Website"
-                            },
-                            {
-                                "type": 2,
-                                "style": 5,
-                                "url": "https://pxsl.dev/discord/",
-                                "label": "Community"
-                            },
-                            {
-                                "type": 2,
-                                "style": 5,
-                                "url": "https://pxsl.dev/thanks/",
-                                "label": "Support Me"
-                            }
-                        ]
-                    }
-                ]
-            }
-        }
-    </script>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Crumb ~ The #1 Utility Bot</title>
-
-    <meta name="description" content="Crumb is a powerful, free Discord utility bot with moderation, server management, tickets, automation and useful server tools.">
-    <meta name="keywords" content="discord bot, utility bot, moderation bot, server management bot, tickets, crumb">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Pxsl">
-
-    <link rel="canonical" href="https://crumb.pxsl.dev/">
-
-    <link rel="icon" href="/assets/crumb.png">
-    <link rel="apple-touch-icon" href="/assets/crumb.png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap"
-        rel="stylesheet"
-    >
-
-    <link rel="stylesheet" href="/static/styles.css">
-
-
-    <!-- Open Graph -->
-
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Crumb - The Discord Utility Bot">
-    <meta property="og:description" content="A free Discord utility bot for moderation, server management, tickets and more.">
-    <meta property="og:url" content="https://crumb.pxsl.dev/">
-    <meta property="og:image" content="https://crumb.pxsl.dev/static/preview.png">
-
-
-    <!-- Twitter -->
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Crumb - The Discord Utility Bot">
-    <meta name="twitter:description" content="Free Discord utility bot with moderation, server tools, tickets and automation.">
-    <meta name="twitter:image" content="https://crumb.pxsl.dev/static/preview.png">
-
-    <meta name="theme-color" content="#f28c28">
-
-
-    <!-- Schema -->
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Crumb",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Discord",
-        "description": "A free Discord utility bot for moderation, server management, tickets and useful server tools.",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "author": {
-            "@type": "Person",
-            "name": "Pxsl"
-        }
-    }
-    </script>
-
-
-    <link rel="stylesheet" href="/static/analytics.css">
-    <script src="/static/analytics.js" defer></script>
-
-
-    <!-- Support Popup -->
-
+    <meta name="theme-color" content="#09090f">
+    <meta name="description" content="Crumb is shutting down soon. Move to Fever and get 4 months free.">
+    <title>Crumb is shutting down</title>
     <style>
-        .support-overlay {
-            position: fixed;
-            inset: 0;
-            z-index: 99998;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.72);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-
-        .support-overlay.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .support-modal {
-            position: relative;
-            width: min(500px, 100%);
-            padding: 28px;
-            background: linear-gradient(
-                145deg,
-                rgba(45, 31, 20, 0.98),
-                rgba(24, 20, 17, 0.98)
-            );
-            border: 1px solid rgba(242, 140, 40, 0.4);
-            border-radius: 22px;
-            box-shadow:
-                0 30px 100px rgba(0, 0, 0, 0.65),
-                0 0 60px rgba(242, 140, 40, 0.12);
-            transform: translateY(20px) scale(0.97);
-            transition: transform 0.4s cubic-bezier(.16, 1, .3, 1);
-        }
-
-        .support-overlay.show .support-modal {
-            transform: translateY(0) scale(1);
-        }
-
-        .support-close {
-            position: absolute;
-            top: 14px;
-            right: 14px;
-            width: 32px;
-            height: 32px;
-            border: 0;
-            border-radius: 9px;
-            background: rgba(255, 255, 255, 0.06);
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 19px;
-            line-height: 1;
-            cursor: pointer;
-            transition: background 0.2s ease, color 0.2s ease;
-        }
-
-        .support-close:hover {
-            background: rgba(255, 255, 255, 0.12);
-            color: #fff;
-        }
-
-        .support-icon {
-            width: 52px;
-            height: 52px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 14px;
-            background: rgba(242, 140, 40, 0.14);
-            border: 1px solid rgba(242, 140, 40, 0.3);
-            border-radius: 14px;
-            font-size: 25px;
-            box-shadow: 0 0 25px rgba(242, 140, 40, 0.08);
-        }
-
-        .support-modal h2 {
-            margin: 0 40px 8px 0;
-            color: #fff;
-            font-size: clamp(24px, 5vw, 30px);
-            font-weight: 900;
-            letter-spacing: -0.5px;
-        }
-
-        .support-modal h2 span {
-            color: #f28c28;
-        }
-
-        .support-modal > p {
-            margin: 0 0 16px;
-            color: rgba(255, 255, 255, 0.68);
-            font-size: 14px;
-            line-height: 1.55;
-        }
-
-        .support-reasons {
-            display: grid;
-            gap: 7px;
-            margin-bottom: 17px;
-        }
-
-        .support-reason {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            padding: 10px 12px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-            border-radius: 11px;
-        }
-
-        .support-reason span {
-            font-size: 16px;
-        }
-
-        .support-reason p {
+        * {
             margin: 0;
-            color: rgba(255, 255, 255, 0.72);
-            font-size: 12.5px;
-            line-height: 1.4;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .support-reason strong {
-            color: #fff;
-        }
-
-        .support-button {
+        body {
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 24px;
+            background: #09090f;
+            color: #f4f4f8;
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        main {
             width: 100%;
-            padding: 13px 18px;
-            border-radius: 11px;
-            background: #f28c28;
-            color: #fff;
-            font-size: 14px;
-            font-weight: 800;
-            text-decoration: none;
-            box-shadow: 0 8px 25px rgba(242, 140, 40, 0.25);
-            transition:
-                transform 0.2s ease,
-                background 0.2s ease,
-                box-shadow 0.2s ease;
-        }
-
-        .support-button:hover {
-            transform: translateY(-2px);
-            background: #ff9d3f;
-            box-shadow: 0 12px 30px rgba(242, 140, 40, 0.35);
-        }
-
-        .support-secondary {
-            margin: 9px 0 0;
-            color: rgba(255, 255, 255, 0.4);
-            font-size: 10px;
-            line-height: 1.4;
+            max-width: 520px;
             text-align: center;
         }
 
-        @media (max-width: 600px) {
-            .support-modal {
-                padding: 24px 20px;
-                border-radius: 19px;
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 12px;
+            margin-bottom: 28px;
+            border: 1px solid #39303b;
+            border-radius: 999px;
+            background: #17121b;
+            color: #e7a6b4;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .status::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #e7a6b4;
+        }
+
+        h1 {
+            margin-bottom: 18px;
+            font-size: clamp(36px, 8vw, 54px);
+            font-weight: 750;
+            letter-spacing: -2.5px;
+            line-height: 1.08;
+        }
+
+        h1 span {
+            color: #a78bfa;
+        }
+
+        p {
+            max-width: 420px;
+            margin: 0 auto;
+            color: #9999ac;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .offer {
+            margin-top: 24px;
+            padding: 20px;
+            border: 1px solid #493b70;
+            border-radius: 16px;
+            background: #151120;
+        }
+
+        .offer h2 {
+            margin-bottom: 8px;
+            color: #c4b5fd;
+            font-size: 22px;
+            letter-spacing: -0.5px;
+        }
+
+        .offer p {
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        a {
+            display: inline-flex;
+            min-height: 48px;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 20px;
+            border: 1px solid transparent;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 650;
+            text-decoration: none;
+            transition: transform 0.2s, background 0.2s, border-color 0.2s;
+        }
+
+        a:hover {
+            transform: translateY(-2px);
+        }
+
+        .primary {
+            background: #a78bfa;
+            color: #100b1d;
+        }
+
+        .primary:hover {
+            background: #b9a4ff;
+        }
+
+        .secondary {
+            border-color: #292936;
+            background: #11111a;
+            color: #d4d4e0;
+        }
+
+        .secondary:hover {
+            border-color: #49495d;
+            background: #171722;
+        }
+
+        footer {
+            margin-top: 40px;
+            color: #555568;
+            font-size: 12px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            a {
+                transition: none;
             }
 
-            .support-modal h2 {
-                font-size: 24px;
+            a:hover {
+                transform: none;
             }
         }
     </style>
-
 </head>
-
-
 <body>
+    <main>
+        <div class="status">SERVICE ANNOUNCEMENT</div>
 
-<div class="background"></div>
-
-
-<!-- Support Popup -->
-
-<div id="supportOverlay" class="support-overlay">
-
-    <div class="support-modal">
-
-        <button
-            id="supportClose"
-            class="support-close"
-            type="button"
-            aria-label="Close"
-        >
-            ×
-        </button>
-
-        <div class="support-icon">
-            💜
-        </div>
-
-        <h2>
-            Help keep <span>Crumb</span> free.
-        </h2>
+        <h1>Crumb is<br>shutting down <span>soon.</span></h1>
 
         <p>
-            Crumb is completely free, with no premium walls,
-            locked commands, or subscriptions. If Crumb has
-            helped your server, you can support me directly
-            and help keep the bot running, maintained, and growing.
+            It's time for something new. Crumb will be shutting down soon,
+            and <strong style="color: #d8ccff;">Fever</strong> will be
+            taking its place.
+
+            Thank you to everyone who's used Crumb and supported us
+            along the way. We genuinely appreciate every single one of you.
         </p>
 
-        <div class="support-reasons">
+        <section class="offer">
+            <h2>4 months. On us.</h2>
+            <p>
+                If you currently have Crumb in your Discord server,
+                you'll receive <strong style="color: #f4f4f8;">4 months of Fever for free.</strong>
+                It's our way of saying thank you for being part of the journey.
+            </p>
+        </section>
 
-            <div class="support-reason">
-                <span>💰</span>
-
-                <p>
-                    <strong>Support me directly</strong><br>
-                    Your support helps cover hosting, APIs and
-                    the costs of keeping Crumb online and improving it.
-                </p>
-            </div>
-
-            <div class="support-reason">
-                <span>🚀</span>
-
-                <p>
-                    <strong>Boost the community</strong><br>
-                    Boost the Crumb Discord server to support the
-                    community and get access to server perks.
-                </p>
-            </div>
-
-            <div class="support-reason">
-                <span>🆓</span>
-
-                <p>
-                    <strong>Keep it free</strong><br>
-                    Supporting Crumb helps me keep its features
-                    available to everyone without paywalls.
-                </p>
-            </div>
-
-        </div>
-
-        <a
-            class="support-button"
-            href="https://pxsl.dev/thanks/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            💜 Support Crumb &amp; Pxsl →
-        </a>
-
-        <p class="support-secondary">
-            Every bit of support genuinely helps. Thank you ❤️
-        </p>
-
-    </div>
-
-</div>
-
-
-<nav>
-
-    <a class="logo" href="/">
-        Cr<span>umb</span>
-    </a>
-
-    <div class="nav-links">
-
-        <a href="/commands/">
-            Commands
-        </a>
-
-        <a href="/legal/">
-            Legal
-        </a>
-
-        <a
-            href="https://pxsl.dev/discord/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            Community
-        </a>
-
-    </div>
-
-</nav>
-
-
-<section class="hero">
-
-    <div class="hero-left">
-
-        <div class="badge">
-            🍪 Built for better servers
-        </div>
-
-        <h1>
-            The Discord bot that keeps
-            <span>
-                your server going.
-            </span>
-        </h1>
-
-        <p>
-            Moderation, server tools, tickets, automation,
-            statistics, and everything else your community
-            needs. All in one powerful free bot.
-        </p>
-
-        <div class="buttons">
-
-            <a
-                class="btn primary"
-                href="/invite/"
-            >
-                Invite Crumb →
+        <div class="actions">
+            <a class="primary" href="https://fever.moe/">
+                Check out Fever &rarr;
             </a>
-
-            <a
-                class="btn secondary"
-                href="/commands/"
-            >
-                Explore Commands
+            <a class="secondary" href="/invite">
+                Invite Crumb to your server
             </a>
-
         </div>
 
-        <div class="mini-stats">
-
-            <div>
-                <strong id="user-count">...</strong>
-                Users
-            </div>
-
-            <div>
-                <strong id="server-count">...</strong>
-                Servers
-            </div>
-
-            <div>
-                <strong id="command-count">...</strong>
-                Commands
-            </div>
-
-            <div>
-                <strong>100%</strong>
-                Free
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="discord-preview">
-
-        <div class="discord-header">
-
-            <img src="/assets/crumb.png">
-
-            <div>
-                <b>Crumb</b>
-                <p>Online</p>
-            </div>
-
-        </div>
-
-        <div class="message">
-
-            <img src="/assets/crumb.png">
-
-            <div>
-                <b>Crumb</b>
-                <p>🛡️ Moderation tools ready.</p>
-            </div>
-
-        </div>
-
-        <div class="message">
-
-            <img src="/assets/crumb.png">
-
-            <div>
-                <b>Crumb</b>
-                <p>📊 Your server has 1,284 members.</p>
-            </div>
-
-        </div>
-
-        <div class="message">
-
-            <img src="/assets/crumb.png">
-
-            <div>
-                <b>Crumb</b>
-                <p>🎫 Your ticket has been created.</p>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="features">
-
-    <h2>
-        Everything your server needs
-    </h2>
-
-    <div class="grid">
-
-        <div class="card">
-
-            <span>🛡️</span>
-
-            <h3>Moderation</h3>
-
-            <p>
-                Warn, kick, ban and manage your community
-                with straightforward moderation tools.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <span>⚙️</span>
-
-            <h3>Server Tools</h3>
-
-            <p>
-                Get useful information about your server,
-                members, channels, roles and configuration.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <span>🎫</span>
-
-            <h3>Tickets</h3>
-
-            <p>
-                Give members a clean and private way to
-                contact your staff when they need help.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <span>📊</span>
-
-            <h3>Server Stats</h3>
-
-            <p>
-                Display useful live community statistics
-                directly inside your server.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <span>⚡</span>
-
-            <h3>Automation</h3>
-
-            <p>
-                Let Crumb handle repetitive server tasks
-                so your staff can focus on the community.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <span>🆓</span>
-
-            <h3>Always Free</h3>
-
-            <p>
-                No premium walls. No locked commands.
-                Crumb is built to be useful for everyone.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="github-section">
-
-    <div class="github-card">
-
-        <div class="github-icon">
-
-            <svg
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-            >
-
-                <path
-                    fill="currentColor"
-                    d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.88-1.36-3.88-1.36-.53-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.33.96.1-.74.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.93 10.93 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.73.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.07.78 2.16v3.2c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"
-                />
-
-            </svg>
-
-        </div>
-
-
-        <div class="github-content">
-
-            <span class="github-label">
-                OPEN SOURCE
-            </span>
-
-            <h2>
-                Crumb is <span>open source.</span>
-            </h2>
-
-            <p>
-                Want to see how Crumb works? The source code is
-                publicly available on GitHub. Explore the code,
-                learn from it, report issues, or contribute to
-                the project.
-            </p>
-
-            <a
-                class="btn github-btn"
-                href="https://github.com/pxsldev/Crumb/"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                ⭐ Star Crumb on GitHub →
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="reviews">
-
-    <h2>
-        Loved by communities
-    </h2>
-
-    <div class="reviews-row-wrap">
-
-        <div
-            class="reviews-row"
-            id="reviewsRow"
-        ></div>
-
-    </div>
-
-</section>
-
-
-<footer>
-
-    <p>
-        © 2026 Crumb Bot • Built by Pxsl • crumb.pxsl.dev
-    </p>
-
-</footer>
-
-
-<script>
-    const supportOverlay =
-        document.getElementById("supportOverlay");
-
-    const supportClose =
-        document.getElementById("supportClose");
-
-
-    function showSupportPopup() {
-        supportOverlay.classList.add("show");
-    }
-
-
-    function hideSupportPopup() {
-        supportOverlay.classList.remove("show");
-    }
-
-
-    supportClose.addEventListener(
-        "click",
-        hideSupportPopup
-    );
-
-
-    supportOverlay.addEventListener(
-        "click",
-        (event) => {
-            if (event.target === supportOverlay) {
-                hideSupportPopup();
-            }
-        }
-    );
-
-
-    setTimeout(
-        showSupportPopup,
-        500
-    );
-</script>
-
-
-<script
-    src="/static/script.js"
-    defer
-></script>
-
-
+        <footer>Crumb → Fever · Thanks for being here.</footer>
+    </main>
 </body>
-
 </html>
